@@ -1,0 +1,30 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-service
+  profiles:
+    active: native
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    config:
+      server:
+        native:
+#          search-locations: file://${user.home}/Volumes/topSSD/dev/workspace/springcloud_MSA/native-file-config
+          search-locations: file:///Volumes/topSSD/dev/workspace/springcloud_MSA/native-file-config
+        git:
+#          uri: file:///Volumes/topSSD/dev/workspace/springcloud_MSA/config
+          uri: https://github.com/bighit-top/spring-cloud-config_learn #.git
+          default-label: main
+#        username:
+#        password:
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh

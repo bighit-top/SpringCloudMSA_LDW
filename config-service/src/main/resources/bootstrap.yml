@@ -1,0 +1,7 @@
+encrypt:
+#  key: 1234
+  key-store:
+#    location: file:///Volumes/topSSD/dev/workspace/springcloud_MSA/keystore/apiEncryptionKey.jks
+    location: file:/apiEncryptionKey.jks
+    password: 123456
+    alias: apiEncryptionKey
